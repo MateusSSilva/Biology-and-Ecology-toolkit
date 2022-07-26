@@ -1,0 +1,35 @@
+---
+title: "10_tutorial"
+output: html_document
+date: '2022-07-26'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Country boundaries
+
+```{r}
+library(sf)
+library(tmap)
+
+data(World)
+# package tmap has a syntax similar to ggplot:
+tm_shape(World) + 
+  tm_borders()
+
+```
+
+
+```{r}
+#Another source is Natural Earth
+#install.packages("rnaturalearth")
+#install.packages("remotes")
+#remotes::install_github("ropensci/rnaturalearthhires")
+library(rnaturalearth)
+library(rnaturalearthhires)
+bra <- ne_states(country = "brazil", returnclass = "sf")
+```
+
+
