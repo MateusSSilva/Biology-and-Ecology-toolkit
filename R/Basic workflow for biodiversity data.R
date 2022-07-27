@@ -1,9 +1,9 @@
 #----Loading packages-----------------------------------------------------------
 
-install.packages("rgbif")
-install.packages("Taxonstand")
-install.packages("CoordinateCleaner")
-install.packages("maps")
+#install.packages("rgbif")
+#install.packages("Taxonstand")
+#install.packages("CoordinateCleaner")
+#install.packages("maps")
 
 library(rgbif)
 library(Taxonstand)
