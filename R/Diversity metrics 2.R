@@ -52,3 +52,32 @@ tax <- rao.diversity(comm)
 fun <- rao.diversity(comm, traits = traits)
 plot(fun$Simpson,fun$FunRao, pch = 19, asp = 1)
 abline(a = 0, b = 1)
+
+#install.packages("FD")
+library(FD)
+#we can use the distance matrix to calculate functional diversity indices
+FuncDiv1 <- dbFD(x = gow, a = comm, messages = F)
+#the returned object has Villéger's indices and Rao calculation
+names(FuncDiv1)
+
+#We can also do the calculation using the traits matrix directly
+FuncDiv <- dbFD(x = traits, a = comm, messages = F)
+
+library(taxize)
+classification_data <- classification(sp_list$TaxonName, db =  "ncbi")
+str(classification)
+length(classification_data)
+
+classification_data$"Arisarum vulgare"
+classification_data[[1]]
+classification_data[[4]]
+
+library(dplyr)
+table_ex <- classification_data[[1]] %>%
+  filter(rank == "family") %>%
+  select(name)
+
+families <- list()
+for(i in 1:length(classification_data)) {
+  families[[i]] <- xxxxxxx
+}
