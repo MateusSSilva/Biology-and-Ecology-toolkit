@@ -72,6 +72,7 @@ classification_data$"Arisarum vulgare"
 classification_data[[1]]
 classification_data[[4]]
 
+
 library(dplyr)
 table_ex <- classification_data[[1]] %>%
   filter(rank == "family") %>%
